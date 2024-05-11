@@ -1,0 +1,10 @@
+branch="$(git symbolic-ref --short -q HEAD)"
+
+if [ "$branch" = "master" ] || [ "$branch" = "main" ]; then
+  echo "You can't commit directly to main branch"
+  exit 1
+fi
+
+# Run the lint and fix the errors
+
+npm run lint
