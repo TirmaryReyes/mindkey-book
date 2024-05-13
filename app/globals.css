@@ -12,9 +12,14 @@
 
 body {
   font-family: "Roboto Flex", sans-serif;
+ 
 }
 
-@layer utilities {
+@layer utilities { 
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
   .btn_white { 
     @apply border-white bg-white px-8 py-3 text-customBlue;
   }
@@ -124,9 +129,8 @@ body {
     @apply text-[16px] font-[700];
   }
 
-  /* Hero */
   .hero-map {
-    @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
+    @apply absolute top-0 left-0 w-full h-full md:h-screen md:w-full bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60 z-[-1];
   }
 
   /* Camp */
