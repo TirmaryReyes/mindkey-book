@@ -18,7 +18,7 @@ describe("Given a NavBar component", () => {
 
       const links = ['/home', '/product', '/about', '/price', '/testimony', '/contact'];
 
-      // Verificar si los elementos son visibles en el documento
+      
       expect(homeLink).toBeTruthy();
       expect(productLink).toBeTruthy();
       expect(aboutLink).toBeTruthy();
