@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import './globals.css'
 import NavBar from './components/navbar/NavBar';
-import Hero from './components/navbar/Hero/Hero';
+import Hero from './components/Hero/Hero';
+
 
 
 export const metadata: Metadata = {
