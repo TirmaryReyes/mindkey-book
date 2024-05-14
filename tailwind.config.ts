@@ -17,8 +17,6 @@ module.exports = {
       },
       backgroundImage: {
         'bg-model': "url('/public/model.svg')",
-        pattern: "url('/pattern.png')",
-        'pattern-2': "url('/pattern-bg.png')",
       },
       screens: {
         xs: '400px',
