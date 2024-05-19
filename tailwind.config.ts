@@ -8,12 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        lightGray: '#D9D9D9',    
-        sandy: '#F1C374',         
-        darkTaupe: '#63575D',     
-        white: '#FFFFFF',         
-        pink: '#FF9FDD',          
-       customBlue: '#15EFF5',     
+        'main-bg': 'var(--main-bg-color)',
+        'main-title': 'var(--main-title-color)',
+        'paragraph': 'var(--paragraph-color)',
+        'sale-price': 'var(--sale-price-color)',
+        'text': 'var(--text-color)',
+        'offer': 'var(--offer-color)',
+        'gray': 'var(--gray-color)',
       },
       backgroundImage: {
         'bg-model': "url('/public/model.svg')",

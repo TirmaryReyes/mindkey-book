@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -8,13 +8,13 @@ function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <div>
-      <nav className="w-full bg-gray-800 fixed top-0 left-0 right-0 z-10">
+    <div className="bg-main-bg-color">
+      <nav className="w-full bg-main-bg-color fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/" legacyBehavior>
-                <h2 className="text-2xl text-customBlue font-bold">MINDBOOK</h2>
+                <h2 className="text-2xl text-paragraph font-bold">MINDBOOK</h2>
               </Link>
               <div className="md:hidden">
                 <button
@@ -22,10 +22,10 @@ function NavBar() {
                   onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
-                    <Image src="/menu-burger-closed.svg" width={30} height={30} alt="close menu" />
+                    <Image src="/images/menu-burger-closed.svg" width={30} height={30} alt="close menu" />
                   ) : (
                     <Image
-                      src="/menu-burger.svg"
+                      src="/images/menu-burger.svg"
                       width={30} height={30}
                       alt="open menu"
                       className="focus:border-none active:border-none"
@@ -35,15 +35,20 @@ function NavBar() {
               </div>
             </div>
           </div>
-          <div className={`flex-1 justify-self-center pb-3 mt-8 md:flex md:justify-end md:pb-0 md:mt-0 md:mr-20 ${navbar ? 'block' : 'hidden'} md:block`}>
-            <ul className="items-center justify-center space-x-0 md:space-x-10 md:flex">
-              {['/home', '/product', '/about', '/price','/testimony', '/contact' ].map((path) => (
-                <li key={path} className="text-xl text-customBlue py-2 px-6 text-center hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-300">
+          <div className={`flex-1 justify-self-center pb-3 mt-8 md:flex md:justify-end md:pb-0 md:mt-0 ${navbar ? 'block' : 'hidden'} md:block`}>
+            <ul className="items-center justify-center space-y-4 md:space-y-0 md:space-x-10 md:flex lg:space-x-14">
+              {['/home', '/product', '/about', '/price', '/testimony'].map((path) => (
+                <li key={path} className="text-xl text-paragraph py-2 px-6 text-center hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-300">
                   <Link href={path} onClick={() => setNavbar(false)}>
                     {path.substring(1).charAt(0).toUpperCase() + path.slice(2)}
                   </Link>
                 </li>
               ))}
+              <li className="text-xl text-paragraph py-2 px-6 text-center hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-300 hidden lg:block">
+                <Link href="/contact" onClick={() => setNavbar(false)}>
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
