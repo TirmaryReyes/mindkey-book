@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import Hero from './Hero'; // Make sure the import path is correct
 import { describe, test, expect } from 'vitest';
+import Hero from '../Hero/Hero';
 
 describe("Given a Hero component", () => {
   describe("When it is rendered", () => {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import NavBar from './NavBar';
 import { describe, test, expect } from 'vitest';
+import NavBar from '../navbar/NavBar';
 
 describe("Given a NavBar component", () => {
   describe("When it is rendered", () => {
