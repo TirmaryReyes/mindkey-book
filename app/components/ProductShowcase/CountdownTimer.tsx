@@ -24,6 +24,12 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60),
       };
+    } else {
+      timeLeft = {
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
     }
 
     return timeLeft;
@@ -41,16 +47,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 
   const timerComponents: JSX.Element[] = [];
 
-  if (Object.keys(timeLeft).length === 0) {
-    return <span>{`Time's up`}</span>;
-  }
-
   Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) return;
-
     timerComponents.push(
       <span key={interval}>
-        {timeLeft[interval]} {interval}{" "}
+        {timeLeft[interval]?.toString().padStart(2, '0')} {interval}{" "}
       </span>
     );
   });
