@@ -1,10 +1,12 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import CountdownTimer from "./CountdownTimer";
-import { CheckIcon } from "@/public/icons/Check";
-import { BadgeIcon } from "@/public/icons/Badge";
-import { ShoppingIcon } from "@/public/icons/Shopping-cart";
+import { BadgeIcon } from "../../../public/icons/Badge";
+import { CheckIcon } from "../../../public/icons/Check";
+import { ShoppingIcon } from "../../../public/icons/Shopping-cart";
+
 
 interface Product {
   title: string;
@@ -23,14 +25,18 @@ interface ProductShowcaseProps {
 }
 
 const ProductShowcase: React.FC<ProductShowcaseProps> = ({ product }) => {
-  const targetDate = new Date(Date.now() + 86400000);
+  const targetDate = new Date();
+  targetDate.setHours(targetDate.getHours() + 4);
 
   return (
-    <section id="product-section" className="bg-main-bg-color p-5 shadow-md rounded-lg text-center mt-5 text-white">
-      <h1 className="text-main-title text-3xl font-bold mt-0 md:text-4xl sm:text-3xl">
+    <section
+      id="product-section"
+      className="bg-main-bg-color p-5 shadow-md rounded-lg text-center mt-5 text-white"
+    >
+      <h1 className="text-main-title text-2xl font-bold mt-0 md:text-4xl sm:text-3xl">
         Summer Weight Loss
       </h1>
-      <h2 className="text-2xl font-bold text-main-title mt-0 mb-5 md:text-xl sm:text-lg">
+      <h2 className="text-xl font-semibold text-main-title mt-0 mb-5 md:text-2xl sm:text-lg">
         A Guide for Women for Effective Weight Loss
       </h2>
       <div className="flex justify-center">
@@ -67,28 +73,30 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ product }) => {
         </ul>
       </div>
       <div className="mt-5 text-center">
-        <span className="text-offer text-3xl font-bold">Special Price!</span>
+        <span className="text-offer text-3xl font-bold md:text-2xl sm:text-xl">
+          Special Price!
+        </span>
         <div className="mt-2">
-          <span className="block text-offer text-2xl leading-relaxed">
+          <span className="block text-offer text-2xl leading-relaxed md:text-xl sm:text-base">
             Summer Sale
           </span>
-          <div className="countdown text-main-title text-4xl md:text-3xl font-bold leading-snug mt-2">
+          <div className="text-main-title text-3xl font-bold md:text-2xl sm:text-xl mt-2">
             <CountdownTimer targetDate={targetDate} />
           </div>
-          <div className="mt-4 flex items-baseline items-center justify-center">
-            <span className="text-offer-color text-sm font-bold">Before</span>
-            <span className="text-gray text-2xl font-bold line-through ml-2">
-              $20.99
-            </span>
-          </div>
-          <div className="flex items-center justify-center">
-            <span className="text-white text-1xl font-bold mt-2 mr-2">
-              Only Now!
-            </span>
-            <span className="text-sale-price text-3xl font-bold mt-2">
-              $14.99
-            </span>
-          </div>
+        </div>
+        <div className="mt-4 flex items-baseline items-center justify-center">
+          <span className="text-offer-color text-sm font-bold">Before</span>
+          <span className="text-gray text-2xl font-bold line-through ml-2">
+            $20.99
+          </span>
+        </div>
+        <div className="flex items-center justify-center">
+          <span className="text-white text-1xl font-bold mt-2 mr-2">
+            Only Now!
+          </span>
+          <span className="salePrice text-3xl font-bold mt-2">
+            $14.99
+          </span>
         </div>
       </div>
       <button className="bg-paragraph hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-4 transition duration-300 ease-in-out text-base md:text-sm">
