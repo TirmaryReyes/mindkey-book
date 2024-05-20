@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, test, expect } from 'vitest';
 import Hero from '../Hero/Hero';
+import React from 'react';
 
 describe("Given a Hero component", () => {
   describe("When it is rendered", () => {
