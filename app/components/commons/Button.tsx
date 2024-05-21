@@ -1,8 +1,8 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react';
 
 interface ButtonProps extends PropsWithChildren {
   actionOnClick?: () => void;
-  type?: "button" | "reset" | "submit";
+  type?: 'button' | 'reset' | 'submit';
   className?: string;
   ariaLabel?: string;
   disabled?: boolean;
@@ -11,7 +11,7 @@ interface ButtonProps extends PropsWithChildren {
 const Button = ({
   actionOnClick,
   className,
-  type = "button",
+  type = 'button',
   children,
   ariaLabel,
   disabled = false,

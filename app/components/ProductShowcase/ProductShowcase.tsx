@@ -1,12 +1,11 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import CountdownTimer from "./CountdownTimer";
-import { BadgeIcon } from "../../../public/icons/Badge";
-import { CheckIcon } from "../../../public/icons/Check";
-import { ShoppingIcon } from "../../../public/icons/Shopping-cart";
-
+import React from 'react';
+import Image from 'next/image';
+import CountdownTimer from './CountdownTimer';
+import { BadgeIcon } from '../../../public/icons/Badge';
+import { CheckIcon } from '../../../public/icons/Check';
+import { ShoppingIcon } from '../../../public/icons/Shopping-cart';
 
 interface Product {
   title: string;
@@ -14,17 +13,11 @@ interface Product {
   description: string;
 }
 
-const productDescription: Product = {
-  title: "Product Title",
-  imageUrl: "path/to/image.jpg",
-  description: "Product Description",
-};
-
 interface ProductShowcaseProps {
   product: Product;
 }
 
-const ProductShowcase: React.FC<ProductShowcaseProps> = ({ product }) => {
+const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
   const targetDate = new Date();
   targetDate.setHours(targetDate.getHours() + 4);
 
@@ -48,7 +41,9 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ product }) => {
         />
         <div className="absolute top-0 right-0 m-2"></div>
       </div>
-      <p className="text-paragraph text-lg font-semibold mt-5">{`What's inside?`}</p>
+      <p className="text-paragraph text-lg font-semibold mt-5">
+        {'What is inside?'}
+      </p>
       <span className="flex flex-col items-center justify-center mt-4">
         <BadgeIcon className="w-10 h-10 text-paragraph" />
         <span className="text-main-title font-semibold text-xl mt-2">
@@ -58,12 +53,12 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ product }) => {
       <div className="bg-main-bg-color text-color p-5 shadow-md rounded-lg mt-5 max-w-4xl mx-auto lg:flex lg:justify-center lg:items-center">
         <ul className="list-none p-0 m-0 space-y-4 flex flex-col items-start justify-center w-full lg:w-3/4">
           {[
-            "Unlock the Benefits of Tailored Guidance for Women on Your Wellness Journey!",
-            "Discover Dietary Strategies, Effective Exercises, and the Secrets of the Mediterranean Diet.",
-            "Gain Tools to Stay Motivated and Overcome Obstacles for a Healthier, Balanced Lifestyle.",
-            "Experience the transformative potential of this book and become the best version of yourself!",
-            "Empower yourself this summer with our weight loss plan designed for women, achieve your goals in a sustainable and healthy way!",
-            "Immerse yourself in the pages of this book and awaken your hidden potential.",
+            'Unlock the Benefits of Tailored Guidance for Women on Your Wellness Journey!',
+            'Discover Dietary Strategies, Effective Exercises, and the Secrets of the Mediterranean Diet.',
+            'Gain Tools to Stay Motivated and Overcome Obstacles for a Healthier, Balanced Lifestyle.',
+            'Experience the transformative potential of this book and become the best version of yourself!',
+            'Empower yourself this summer with our weight loss plan designed for women, achieve your goals in a sustainable and healthy way!',
+            'Immerse yourself in the pages of this book and awaken your hidden potential.',
           ].map((text, index) => (
             <li key={index} className="flex items-center justify-start w-full">
               <CheckIcon className="w-5 h-5 mr-2 text-green-500 flex-shrink-0" />
@@ -94,9 +89,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ product }) => {
           <span className="text-white text-1xl font-bold mt-2 mr-2">
             Only Now!
           </span>
-          <span className="salePrice text-3xl font-bold mt-2">
-            $14.99
-          </span>
+          <span className="salePrice text-3xl font-bold mt-2">$14.99</span>
         </div>
       </div>
       <button className="bg-paragraph hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-4 transition duration-300 ease-in-out text-base md:text-sm">
