@@ -1,48 +1,74 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
-  const pathname = usePathname();
-  const [activePath, setActivePath] = useState(pathname);
+  usePathname();
+  const [mounted, setMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
-  const navItems = useMemo(
-    () => [
-      { path: '/', label: 'Home', ref: 'home-section' },
-      { path: '/product', label: 'Product', ref: 'product-section' },
-      { path: '/about', label: 'About', ref: 'about-section' },
-      { path: '/testimony', label: 'Testimony', ref: 'testimony-section' },
-      {
-        path: '/contact',
-        label: 'Contact',
-        ref: 'contact-section',
-        className: 'hidden lg:block',
-      },
-    ],
-    [],
-  );
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const navItems = [
+    { path: '#home-section', label: 'Home' },
+    { path: '#about-section', label: 'About' },
+    { path: '#product-section', label: 'Product' },
+    { path: '#testimony-section', label: 'Testimony' },
+    {
+      path: '#contact-section',
+      label: 'Contact',
+      className: 'hidden lg:block',
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      navItems.forEach((item) => {
-        const section = document.getElementById(item.ref);
-        if (section) {
-          const { top, bottom } = section.getBoundingClientRect();
-          if (top <= 0 && bottom >= 0) {
-            setActivePath(item.path);
-          }
+      const sections = navItems.map((item) =>
+        document.querySelector(item.path),
+      );
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      const currentSection = sections.find((section) => {
+        if (section && section instanceof HTMLElement) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          return (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          );
         }
+        return false;
       });
+
+      if (currentSection && currentSection instanceof HTMLElement) {
+        const currentSectionId = `#${currentSection.id}`;
+        setActiveSection(currentSectionId);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [navItems]);
+  }, []);
+
+  const handleLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    path: string,
+  ) => {
+    event.preventDefault();
+    const section = document.querySelector(path);
+    if (section && section instanceof HTMLElement) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setNavbar(false);
+  };
 
   return (
     <div className="bg-main-bg-color">
@@ -55,7 +81,7 @@ function NavBar() {
               </Link>
               <div className="md:hidden">
                 <button
-                  className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
+                  className="p-2 text-paragraph rounded-md outline-none focus:border-gray-400 focus:border"
                   onClick={() => setNavbar(!navbar)}
                 >
                   <span className="block w-8 h-8">{navbar ? '✖' : '☰'}</span>
@@ -74,9 +100,14 @@ function NavBar() {
                   key={item.path}
                   className={`text-xl text-paragraph py-2 px-6 text-center hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-300 ${
                     item.className || ''
-                  } ${activePath === item.path ? 'underline' : ''}`}
+                  } ${mounted && activeSection === item.path ? 'underline' : ''}`}
                 >
-                  <Link href={item.path}>{item.label}</Link>
+                  <a
+                    href={item.path}
+                    onClick={(event) => handleLinkClick(event, item.path)}
+                  >
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
