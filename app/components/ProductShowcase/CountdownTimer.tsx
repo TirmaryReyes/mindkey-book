@@ -50,8 +50,8 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   Object.keys(timeLeft).forEach((interval) => {
     timerComponents.push(
       <span key={interval}>
-        {timeLeft[interval]?.toString().padStart(2, '0')} {interval}{" "}
-      </span>
+        {timeLeft[interval]?.toString().padStart(2, '0')} {interval}{' '}
+      </span>,
     );
   });
 
