@@ -1,3 +1,4 @@
+import About from './components/About/About';
 import Hero from './components/Hero/Hero';
 import ProductShowcase from './components/ProductShowcase/ProductShowcase';
 import Layout from './layout';
@@ -13,6 +14,9 @@ export default function Home() {
     <Layout>
       <section id="home-section">
         <Hero />
+      </section>
+      <section id="about-section">
+        <About />
       </section>
       <section id="product-section">
         <ProductShowcase product={productDescription} />

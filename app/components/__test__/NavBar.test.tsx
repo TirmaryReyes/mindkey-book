@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, test, expect } from 'vitest';
-import NavBar from '../navbar/NavBar';
+import NavBar from '../NavBar/NavBar';
 
 describe('Given a NavBar component', () => {
   describe('When it is rendered', () => {
@@ -8,16 +8,14 @@ describe('Given a NavBar component', () => {
       render(<NavBar />);
 
       const homeLink = screen.getByRole('link', { name: 'Home' });
-      const productLink = screen.getByRole('link', { name: 'Product' });
       const aboutLink = screen.getByRole('link', { name: 'About' });
-      const priceLink = screen.getByRole('link', { name: 'Price' });
+      const productLink = screen.getByRole('link', { name: 'Product' });
       const testimonyLink = screen.getByRole('link', { name: 'Testimony' });
       const contactLink = screen.getByRole('link', { name: 'Contact' });
 
       expect(homeLink).toBeTruthy();
       expect(productLink).toBeTruthy();
       expect(aboutLink).toBeTruthy();
-      expect(priceLink).toBeTruthy();
       expect(testimonyLink).toBeTruthy();
       expect(contactLink).toBeTruthy();
     });
