@@ -11,13 +11,13 @@ const About = () => {
           About the Author
         </h2>
         <div className="relative flex flex-col items-center justify-center">
-          <div className="w-2/3 md:w-1/2 lg:w-1/3 mb-4">
+          <div className="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 mb-4 relative">
             <Image
               src="/images/jb-photo.svg"
               alt="author photo"
-              width={500}
-              height={500}
-              className="w-full h-auto rounded-full border-4 border-teal-300 shadow-lg"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-full border-4 border-teal-300 shadow-lg"
             />
           </div>
           <div className="bg-main-bg-color text-color p-5 shadow-lg rounded-lg mt-5 max-w-4xl mx-auto border-2 border-teal-300">

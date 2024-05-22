@@ -1,6 +1,7 @@
 import About from './components/About/About';
 import Hero from './components/Hero/Hero';
 import ProductShowcase from './components/ProductShowcase/ProductShowcase';
+import Testimonials from './components/Testimonials/Testimonials';
 import Layout from './layout';
 
 const productDescription = {
@@ -20,6 +21,9 @@ export default function Home() {
       </section>
       <section id="product-section">
         <ProductShowcase product={productDescription} />
+      </section>
+      <section id="testimony-section">
+        <Testimonials />
       </section>
     </Layout>
   );

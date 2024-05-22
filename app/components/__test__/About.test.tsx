@@ -13,7 +13,7 @@ describe('Given an About component', () => {
       const authorPhoto = screen.getByAltText('author photo');
       const description = screen.getByText(/My name is Jean-Baptiste/i);
       const quote = screen.getByText(
-        /"Empower your journey with knowledge and passion."/i,
+        /Empower your journey with knowledge and passion/i,
       );
 
       expect(heading).toBeTruthy();

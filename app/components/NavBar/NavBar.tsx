@@ -84,7 +84,9 @@ function NavBar() {
                   className="p-2 text-paragraph rounded-md outline-none focus:border-gray-400 focus:border"
                   onClick={() => setNavbar(!navbar)}
                 >
-                  <span className="block w-8 h-8">{navbar ? '✖' : '☰'}</span>
+                  <span className="block w-12 h-12 text-4xl">
+                    {navbar ? '✖' : '☰'}
+                  </span>
                 </button>
               </div>
             </div>
