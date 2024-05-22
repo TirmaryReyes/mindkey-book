@@ -21,10 +21,14 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
   const targetDate = new Date();
   targetDate.setHours(targetDate.getHours() + 4);
 
+  const handleBuyNowClick = () => {
+    window.location.href = 'https://www.pinterest.es/';
+  };
+
   return (
     <section
       id="product-section"
-      className="bg-main-bg-color p-5 shadow-md rounded-lg text-center mt-5 text-white"
+      className="bg-main-bg-color p-5 shadow-md rounded-lg text-center mt-2 text-white"
     >
       <h1 className="text-main-title text-3xl font-bold mt-0 sm:text-4xl">
         Summer Weight Loss
@@ -36,13 +40,17 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
         <Image
           src="/images/ebook.svg"
           alt="ebook cover"
-          width={300}
+          width={200}
           height={100}
+          style={{
+            maxWidth: '100%',
+            height: 'auto',
+          }}
         />
         <div className="absolute top-0 right-0 m-2"></div>
       </div>
       <p className="text-paragraph text-2xl font-semibold mt-5">
-        {'What is inside?'}
+        What&apos;s inside?
       </p>
       <span className="flex flex-col items-center justify-center mt-4">
         <BadgeIcon className="w-10 h-10 text-paragraph" />
@@ -89,7 +97,10 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
           </span>
         </div>
       </div>
-      <button className="bg-paragraph hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-4 transition duration-300 ease-in-out text-sm sm:text-lg">
+      <button
+        onClick={handleBuyNowClick}
+        className="bg-paragraph hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-4 transition duration-300 ease-in-out text-sm sm:text-lg"
+      >
         <ShoppingIcon className="hidden sm:inline mr-2 text-white h-6 w-6 sm:h-4 sm:w-4" />
         <span>Buy Now</span>
       </button>

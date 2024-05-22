@@ -1,11 +1,6 @@
-import type { Metadata } from 'next';
 import './globals.css';
 import NavBar from './components/NavBar/NavBar';
-
-export const metadata: Metadata = {
-  title: 'MindBook',
-  description: 'Ebook, A Guide for Women for Effective Weight Loss',
-};
+import { metadata } from './constants';
 
 export default function RootLayout({
   children,
@@ -14,9 +9,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>{String(metadata.title)}</title>
+        <meta name="description" content={String(metadata.description)} />
+      </head>
       <body>
-        <main>{children}</main>
         <NavBar />
+        <main>{children}</main>
       </body>
     </html>
   );

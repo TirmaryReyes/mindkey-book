@@ -1,12 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
-  usePathname();
   const [mounted, setMounted] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
@@ -14,17 +12,20 @@ function NavBar() {
     setMounted(true);
   }, []);
 
-  const navItems = [
-    { path: '#home-section', label: 'Home' },
-    { path: '#about-section', label: 'About' },
-    { path: '#product-section', label: 'Product' },
-    { path: '#testimony-section', label: 'Testimony' },
-    {
-      path: '#contact-section',
-      label: 'Contact',
-      className: 'hidden lg:block',
-    },
-  ];
+  const navItems = useMemo(
+    () => [
+      { path: '#home-section', label: 'Home' },
+      { path: '#about-section', label: 'About' },
+      { path: '#product-section', label: 'Product' },
+      { path: '#testimony-section', label: 'Testimony' },
+      {
+        path: '#contact-section',
+        label: 'Contact',
+        className: 'hidden lg:block',
+      },
+    ],
+    [],
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +57,7 @@ function NavBar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [navItems]);
 
   const handleLinkClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
