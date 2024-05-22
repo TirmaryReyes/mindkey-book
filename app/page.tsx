@@ -1,4 +1,5 @@
 import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 import Hero from './components/Hero/Hero';
 import ProductShowcase from './components/ProductShowcase/ProductShowcase';
 import Testimonials from './components/Testimonials/Testimonials';
@@ -24,6 +25,9 @@ export default function Home() {
       </section>
       <section id="testimony-section">
         <Testimonials />
+      </section>
+      <section id="footer-section">
+        <Footer />
       </section>
     </Layout>
   );

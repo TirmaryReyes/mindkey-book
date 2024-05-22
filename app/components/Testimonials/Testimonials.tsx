@@ -36,10 +36,10 @@ const Testimonials = () => {
 
   return (
     <div className="bg-black text-white py-8">
-      <h2 className="text-center text-paragraph text-2xl font-bold mb-4">
+      <h2 className="text-center text-paragraph text-2xl font-bold mb-4 px-4">
         Join my community of readers
       </h2>
-      <h3 className="text-center text-2xl font-bold text-main-title mb-8">
+      <h3 className="text-center text-2xl font-bold text-main-title mb-8 px-4">
         Transformative Testimonials
       </h3>
       <div className="hidden md:grid md:grid-cols-3 gap-4 mx-auto max-w-6xl">
@@ -60,7 +60,7 @@ const Testimonials = () => {
               ))}
             </div>
             <div className="flex items-center justify-end mt-4">
-              <span className="text-yellow-400 font-bold mr-4">
+              <span className="text-white font-bold mr-4">
                 {testimonial.name}
               </span>
               <Image
@@ -69,6 +69,10 @@ const Testimonials = () => {
                 height={48}
                 src={testimonial.image}
                 alt={testimonial.name}
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
               />
             </div>
           </div>
@@ -102,6 +106,10 @@ const Testimonials = () => {
                   height={48}
                   src={testimonial.image}
                   alt={testimonial.name}
+                  style={{
+                    maxWidth: '100%',
+                    height: 'auto',
+                  }}
                 />
               </div>
             </div>
