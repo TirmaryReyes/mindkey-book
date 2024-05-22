@@ -46,12 +46,17 @@ const Testimonials = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
+            data-testid="testimonial"
             className="p-4 rounded-lg bg-gray-800 border border-gray-700 flex flex-col justify-between"
           >
             <p className="text-lg text-center">{testimonial.text}</p>
             <div className="flex justify-center mt-4">
               {[1, 2, 3, 4, 5].map((value) => (
-                <FaStar key={value} className="text-yellow-400" />
+                <FaStar
+                  key={value}
+                  className="text-yellow-400"
+                  data-testid="star"
+                />
               ))}
             </div>
             <div className="flex items-center justify-end mt-4">
@@ -74,12 +79,17 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
+              data-testid="testimonial"
               className="p-4 rounded-lg bg-gray-800 border border-gray-700 flex flex-col justify-between"
             >
               <p className="text-lg text-center">{testimonial.text}</p>
               <div className="flex justify-center mt-4">
                 {[1, 2, 3, 4, 5].map((value) => (
-                  <FaStar key={value} className="text-yellow-400" />
+                  <FaStar
+                    key={value}
+                    className="text-yellow-400"
+                    data-testid="star"
+                  />
                 ))}
               </div>
               <div className="flex items-center justify-end mt-4">

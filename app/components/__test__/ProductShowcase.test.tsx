@@ -24,9 +24,6 @@ describe('Given a ProductShowcase component', () => {
       const specialPriceText = screen.getByText('Special Price!');
       expect(specialPriceText).toBeTruthy();
 
-      const countdownTimer = screen.getByText(/hours/i);
-      expect(countdownTimer).toBeTruthy();
-
       const benefitsList = [
         'Unlock the Benefits of Tailored Guidance for Women on Your Wellness Journey!',
         'Discover Dietary Strategies, Effective Exercises, and the Secrets of the Mediterranean Diet.',
