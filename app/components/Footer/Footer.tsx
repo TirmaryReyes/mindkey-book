@@ -1,12 +1,20 @@
 'use client';
 
-import { ShoppingIcon } from '@/public/icons/Shopping-cart';
 import Image from 'next/image';
 import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
-const Footer = () => {
+interface FooterProps {
+  onBuyNowClick?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
   const handleBuyNowClick = () => {
-    window.location.href = 'https://www.pinterest.es/';
+    if (onBuyNowClick) {
+      onBuyNowClick();
+    } else {
+      window.location.href = 'https://www.pinterest.es/';
+    }
   };
 
   return (
@@ -34,23 +42,38 @@ const Footer = () => {
           onClick={handleBuyNowClick}
           className="bg-paragraph hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-4 transition duration-300 ease-in-out text-sm sm:text-lg"
         >
-          <ShoppingIcon className="hidden sm:inline mr-2 text-white h-6 w-6 sm:h-4 sm:w-4" />
           <span>Buy Now</span>
         </button>
       </section>
       <div className="bg-black text-white py-4">
         <div className="container mx-auto text-center">
           <div className="flex justify-center space-x-6 mb-4">
-            <a href="https://facebook.com" className="hover:text-blue-500">
+            <a
+              href="https://facebook.com"
+              className="hover:text-blue-500"
+              aria-label="facebook"
+            >
               <FaFacebook size={24} />
             </a>
-            <a href="https://twitter.com" className="hover:text-blue-400">
+            <a
+              href="https://twitter.com"
+              className="hover:text-blue-400"
+              aria-label="twitter"
+            >
               <FaTwitter size={24} />
             </a>
-            <a href="https://instagram.com" className="hover:text-pink-500">
+            <a
+              href="https://instagram.com"
+              className="hover:text-pink-500"
+              aria-label="instagram"
+            >
               <FaInstagram size={24} />
             </a>
-            <a href="mailto:info@example.com" className="hover:text-red-500">
+            <a
+              href="mailto:info@example.com"
+              className="hover:text-red-500"
+              aria-label="email"
+            >
               <FaEnvelope size={24} />
             </a>
           </div>
@@ -59,6 +82,10 @@ const Footer = () => {
       </div>
     </>
   );
+};
+
+Footer.propTypes = {
+  onBuyNowClick: PropTypes.func,
 };
 
 export default Footer;

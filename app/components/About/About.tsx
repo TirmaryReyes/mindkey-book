@@ -27,11 +27,12 @@ const About = () => {
           </div>
           <div className="bg-main-bg-color text-color p-5 shadow-lg rounded-lg mt-5 max-w-4xl mx-auto border-2 border-paragraph">
             <p className="text-white text-base leading-snug sm:text-lg md:text-xl lg:text-xl lg:leading-normal xl:leading-loose">
-              My name is Jean-Baptiste, and I have created this Ebook to help
-              people achieve their ideal weight any time of the year. You will
-              find data, graphics, and tools to achieve this goal. I hope this
-              resource proves to be very useful on your journey towards a better
-              version of yourself!
+              Hello! My name is Jean-Baptiste, and I have created this Ebook to
+              help you achieve your ideal weight year-round. Inside, you&apos;ll
+              find valuable data, graphics, and tools to support you in reaching
+              your goals. I hope this resource proves invaluable on your journey
+              toward a better version of yourself! Download your free copy today
+              and start your transformation!
             </p>
           </div>
           <div className="mt-6">
