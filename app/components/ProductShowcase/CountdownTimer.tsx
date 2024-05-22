@@ -7,7 +7,6 @@ interface CountdownTimerProps {
 }
 
 interface TimeLeft {
-  [key: string]: number | undefined;
   hours?: number;
   minutes?: number;
   seconds?: number;
@@ -45,17 +44,21 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     return () => clearTimeout(timer);
   }, [calculateTimeLeft, timeLeft]);
 
-  const timerComponents: JSX.Element[] = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
-    timerComponents.push(
-      <span key={interval}>
-        {timeLeft[interval]?.toString().padStart(2, '0')} {interval}{' '}
-      </span>,
-    );
-  });
-
-  return <div>{timerComponents}</div>;
+  return (
+    <div className="flex justify-center items-center space-x-2 text-main-title font-bold text-3xl md:text-4xl mt-4">
+      {timeLeft.hours !== undefined && (
+        <span>{timeLeft.hours.toString().padStart(2, '0')}</span>
+      )}
+      <span>:</span>
+      {timeLeft.minutes !== undefined && (
+        <span>{timeLeft.minutes.toString().padStart(2, '0')}</span>
+      )}
+      <span>:</span>
+      {timeLeft.seconds !== undefined && (
+        <span>{timeLeft.seconds.toString().padStart(2, '0')}</span>
+      )}
+    </div>
+  );
 };
 
 export default CountdownTimer;
