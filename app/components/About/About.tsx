@@ -42,9 +42,9 @@ const About = () => {
           </div>
           <button
             onClick={handleBuyNowClick}
-            className="bg-paragraph hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-4 transition duration-300 ease-in-out text-sm sm:text-lg"
+            className="bg-paragraph hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-md inline-flex items-center justify-center mt-4 transition duration-300 ease-in-out text-sm sm:text-lg"
           >
-            <span>Download!</span>
+            <span>Free Download!</span>
           </button>
           <div className="mt-6 border-t-2 border-paragraph w-full max-w-3xl mx-auto"></div>
         </div>

@@ -12,10 +12,10 @@ describe('Given an About component', () => {
       });
       const authorPhoto = screen.getByAltText('author photo');
       const authorInfo = screen.getByText(
-        /Hello! My name is Jean-Baptiste, and I have created this Ebook to help you achieve your ideal weight year-round. Inside, you'll find valuable data, graphics, and tools to support you in reaching your goals. I hope this resource proves invaluable on your journey toward a better version of yourself! Download your free copy today and start your transformation!/i,
+        /Hello! My name is Jean-Baptiste, and I have created this Ebook to help you achieve your ideal weight year-round. Inside, you'll find valuable data, graphics, and tools to support you in reaching your goals. I hope this resource proves invaluable on your journey toward a better version of yourself! Download your free copy today and start your transformation!/i
       );
       const authorQuote = screen.getByText(
-        /Empower your journey with knowledge and passion./i,
+        /Empower your journey with knowledge and passion./i
       );
       const downloadButton = screen.getByRole('button', { name: /Download!/i });
 

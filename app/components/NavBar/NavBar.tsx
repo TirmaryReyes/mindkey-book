@@ -24,13 +24,13 @@ function NavBar() {
         className: 'hidden lg:block',
       },
     ],
-    [],
+    []
   );
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) =>
-        document.querySelector(item.path),
+        document.querySelector(item.path)
       );
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -61,7 +61,7 @@ function NavBar() {
 
   const handleLinkClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
-    path: string,
+    path: string
   ) => {
     event.preventDefault();
     const section = document.querySelector(path);

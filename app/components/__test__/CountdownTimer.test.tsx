@@ -16,7 +16,7 @@ describe('Given a CountdownTimer component', () => {
         expect(spans).toHaveLength(3);
 
         const [hours, minutes, seconds] = spans.map(
-          (span: HTMLElement) => span.textContent ?? '',
+          (span: HTMLElement) => span.textContent ?? ''
         );
 
         expect(hours).toMatch(/^\d{2}$/);

@@ -45,7 +45,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   }, [calculateTimeLeft, timeLeft]);
 
   return (
-    <div className="flex justify-center items-center space-x-2 text-main-title font-bold text-3xl md:text-4xl mt-4">
+    <div className="flex justify-center items-center space-x-2 text-main-title font-light text-2xl md:text-2xl">
       {timeLeft.hours !== undefined && (
         <span>{timeLeft.hours.toString().padStart(2, '0')}</span>
       )}

@@ -17,15 +17,15 @@ describe('Given a ProductShowcase component', () => {
       expect(productTitle).toBeTruthy();
 
       const guideText = screen.getByText(
-        'A Guide for Women for Effective Weight Loss',
+        'A Guide for Women for Effective Weight Loss'
       );
       expect(guideText).toBeTruthy();
 
-      const specialPriceText = screen.getByText('Special Price!');
-      expect(specialPriceText).toBeTruthy();
+      const specialOfferText = screen.getByText('Special offer!');
+      expect(specialOfferText).toBeTruthy();
 
       const benefitsList = [
-        'Unlock the Benefits of Tailored Guidance for Women on Your Wellness Journey!',
+        'Embrace the Benefits of Tailored Guidance for Women on Your Wellness Journey!',
         'Discover Dietary Strategies, Effective Exercises, and the Secrets of the Mediterranean Diet.',
         'Gain Tools to Stay Motivated and Overcome Obstacles for a Healthier, Balanced Lifestyle.',
         'Experience the transformative potential of this book and become the best version of yourself!',
@@ -37,14 +37,14 @@ describe('Given a ProductShowcase component', () => {
         expect(benefitItem).toBeTruthy();
       });
 
-      const beforePrice = screen.getByText('Before');
+      const programValueText = screen.getByText('Program value');
+      expect(programValueText).toBeTruthy();
       const oldPrice = screen.getByText('$20.99');
-      const nowPriceText = screen.getByText('Only Now!');
+      const limitedTimeOfferText = screen.getByText('Limited time offer');
       const salePrice = screen.getByText('$14.99');
 
-      expect(beforePrice).toBeTruthy();
       expect(oldPrice).toBeTruthy();
-      expect(nowPriceText).toBeTruthy();
+      expect(limitedTimeOfferText).toBeTruthy();
       expect(salePrice).toBeTruthy();
 
       const buyNowButton = screen.getByRole('button', { name: /buy now/i });
