@@ -17,7 +17,7 @@ function NavBar() {
       { path: '#home-section', label: 'Home' },
       { path: '#about-section', label: 'About' },
       { path: '#product-section', label: 'Product' },
-      { path: '#testimony-section', label: 'Testimony' },
+      { path: '#testimony-section', label: 'Testimonials' },
       {
         path: '#contact-section',
         label: 'Contact',

@@ -13,7 +13,7 @@ const About = () => {
       id="about-section"
     >
       <div className="max-w-4xl mx-auto px-6 lg:px-20">
-        <h2 className="text-2xl font-semibold text-paragraph mb-4 sm:text-3xl md:text-4xl">
+        <h2 className="text-2xl font-semibold text-paragraph mb-4 text-3xl md:text-4xl">
           Get to Know the Author
         </h2>
         <div className="relative flex flex-col items-center justify-center">
@@ -22,11 +22,15 @@ const About = () => {
               src="/images/jb-photo.svg"
               alt="author photo"
               className="object-cover"
-              layout="fill"
+              sizes="100vw"
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+              }}
             />
           </div>
           <div className="bg-main-bg-color text-color p-5 shadow-lg rounded-lg mt-5 max-w-4xl mx-auto border-2 border-paragraph">
-            <p className="text-white text-base leading-snug sm:text-lg md:text-xl lg:text-xl lg:leading-normal xl:leading-loose">
+            <p className="text-white text-base leading-snug text-lg md:text-xl lg:text-xl lg:leading-normal xl:leading-loose">
               Hello! My name is Jean-Baptiste, and I have created this Ebook to
               help you achieve your ideal weight year-round. Inside, you&apos;ll
               find valuable data, graphics, and tools to support you in reaching
@@ -42,7 +46,7 @@ const About = () => {
           </div>
           <button
             onClick={handleBuyNowClick}
-            className="bg-paragraph hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-md inline-flex items-center justify-center mt-4 transition duration-300 ease-in-out text-sm sm:text-lg"
+            className="bg-paragraph hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-md inline-flex items-center justify-center mt-4 transition duration-300 ease-in-out text-sm text-lg"
           >
             <span>Free Download!</span>
           </button>

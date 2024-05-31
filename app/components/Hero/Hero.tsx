@@ -12,7 +12,7 @@ const Hero = () => {
             worrying about those extra pounds?
           </span>
         </h1>
-        <p className="mt-10 text-base font-semibold italic text-center text-white mx-auto leading-loose sm:mt-16 sm:text-lg md:mt-20 md:text-xl lg:mt-24 lg:text-2xl lg:leading-loose xl:leading-looser">
+        <p className="mt-10 text-md font-semibold italic text-center text-white mx-auto leading-loose sm:mt-16 sm:text-lg md:mt-20 md:text-xl lg:mt-24 lg:text-2xl lg:leading-loose xl:leading-looser">
           My eBook can help you achieve just that effortlessly
         </p>
       </div>

@@ -10,6 +10,58 @@
   --gray-color: #828282;
   --green-color: #22c55e;
   --green-hover-color: #1e9e3a;
+
+  --font-size-xxs: 10px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+}
+
+/* Clases personalizadas para tamaños de fuente */
+.text-xxs {
+  font-size: var(--font-size-xxs);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-md {
+  font-size: var(--font-size-md);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl);
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl);
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl);
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl);
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl);
 }
 
 body {
@@ -135,7 +187,9 @@ html {
   .offerTitle {
     @apply text-offer-color text-5xl font-bold;
   }
-
+  .small-font-size {
+    font-size: 12px;
+  }
   .offerSubTitle,
   .countdown,
   .originalPrice,

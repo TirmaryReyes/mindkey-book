@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
     if (onBuyNowClick) {
       onBuyNowClick();
     } else {
-      window.open('https://www.pinterest.com/mindkeybook/', '_blank');
+      window.open('https://whop.com/hub/mindbody/', '_blank');
     }
   };
 
@@ -42,7 +42,7 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
         </div>
         <button
           onClick={handleBuyNowClick}
-          className="bg-paragraph hover:bg-blue-400 mb-10 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-10 transition duration-300 ease-in-out text-sm sm:text-lg"
+          className="bg-paragraph hover:bg-blue-400 mb-10 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-10 transition duration-300 ease-in-out text-xs sm:text-sm"
         >
           <ShoppingIcon className="hidden sm:inline mr-2 text-white h-6 w-6 sm:h-4 sm:w-4" />
           <span>Buy Now</span>
@@ -52,12 +52,12 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
         <div className="container mx-auto text-center">
           <div className="flex justify-center space-x-6 mb-4">
             {/*<a
-              href="https://facebook.com"
-              className="hover:text-blue-500"
-              aria-label="facebook"
-            >
-              <FaFacebook size={24} />
-            </a>*/}
+            href="https://facebook.com"
+            className="hover:text-blue-500"
+            aria-label="facebook"
+          >
+            <FaFacebook size={24} />
+          </a>*/}
             <a
               href="https://x.com/MindKeyBook"
               className="hover:text-blue-400"
@@ -68,12 +68,12 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
               <FaXTwitter size={24} />
             </a>
             {/*<a
-              href="https://instagram.com"
-              className="hover:text-pink-500"
-              aria-label="instagram"
-            >
-              <FaInstagram size={24} />
-            </a>*/}
+            href="https://instagram.com"
+            className="hover:text-pink-500"
+            aria-label="instagram"
+          >
+            <FaInstagram size={24} />
+          </a>*/}
             <a
               href="mindkeybook@gmail.com"
               className="hover:text-red-500"
@@ -82,15 +82,15 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
               <FaEnvelope size={24} />
             </a>
           </div>
-          <p>&copy; 2024 MindBook. All rights reserved.</p>
+          <p className="text-xxs">&copy; 2024 MindBook. All rights reserved.</p>
         </div>
       </div>
     </>
   );
 };
 
+export default Footer;
+
 Footer.propTypes = {
   onBuyNowClick: PropTypes.func,
 };
-
-export default Footer;

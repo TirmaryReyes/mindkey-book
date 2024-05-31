@@ -10,7 +10,7 @@ describe('Given a NavBar component', () => {
       const homeLink = screen.getByRole('link', { name: 'Home' });
       const aboutLink = screen.getByRole('link', { name: 'About' });
       const productLink = screen.getByRole('link', { name: 'Product' });
-      const testimonyLink = screen.getByRole('link', { name: 'Testimony' });
+      const testimonyLink = screen.getByRole('link', { name: 'Testimonials' });
       const contactLink = screen.getByRole('link', { name: 'Contact' });
 
       expect(homeLink).toBeTruthy();

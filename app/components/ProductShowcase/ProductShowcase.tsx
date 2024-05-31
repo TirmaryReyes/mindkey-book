@@ -26,7 +26,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onBuyNowClick }) => {
     if (onBuyNowClick) {
       onBuyNowClick();
     } else {
-      window.open('https://www.pinterest.com/mindkeybook/', '_blank');
+      window.open('https://whop.com/hub/mindbody/', '_blank');
     }
   };
 
@@ -47,8 +47,11 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onBuyNowClick }) => {
           alt="ebook cover"
           width={300}
           height={100}
-          style={{ maxWidth: '100%', height: 'auto' }}
           className="mt-4 lg:mt-0"
+          style={{
+            maxWidth: '100%',
+            height: 'auto',
+          }}
         />
       </div>
       <p className="text-paragraph text-2xl font-semibold mt-5">
@@ -104,7 +107,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onBuyNowClick }) => {
         </div>
         <button
           onClick={handleBuyNowClick}
-          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-sm sm:text-lg"
+          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-xxs sm:text-xs"
         >
           <ShoppingIcon className="hidden sm:inline mr-2 text-white h-6 w-6 sm:h-4 sm:w-4" />
           <span>Buy Now</span>

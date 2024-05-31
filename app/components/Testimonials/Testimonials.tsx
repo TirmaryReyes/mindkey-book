@@ -49,7 +49,7 @@ const Testimonials = () => {
             data-testid="testimonial"
             className="p-4 rounded-lg bg-gray-800 border border-gray-700 flex flex-col justify-between"
           >
-            <p className="text-lg text-center">{testimonial.text}</p>
+            <p className="text-lg text-center text-md">{testimonial.text}</p>
             <div className="flex justify-center mt-4">
               {[1, 2, 3, 4, 5].map((value) => (
                 <FaStar
@@ -60,7 +60,7 @@ const Testimonials = () => {
               ))}
             </div>
             <div className="flex items-center justify-end mt-4">
-              <span className="text-white font-bold mr-4">
+              <span className="text-white font-bold mr-4 text-lg">
                 {testimonial.name}
               </span>
               <Image
@@ -86,7 +86,7 @@ const Testimonials = () => {
               data-testid="testimonial"
               className="p-4 rounded-lg bg-gray-800 border border-gray-700 flex flex-col justify-between"
             >
-              <p className="text-lg text-center">{testimonial.text}</p>
+              <p className="text-md text-center">{testimonial.text}</p>
               <div className="flex justify-center mt-4">
                 {[1, 2, 3, 4, 5].map((value) => (
                   <FaStar
@@ -97,7 +97,7 @@ const Testimonials = () => {
                 ))}
               </div>
               <div className="flex items-center justify-end mt-4">
-                <span className="text-yellow-400 font-bold mr-4">
+                <span className="text-yellow-400 font-bold mr-4 text-lg">
                   {testimonial.name}
                 </span>
                 <Image
