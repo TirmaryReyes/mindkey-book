@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
         </h1>
         <div className="flex justify-center w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mt-4">
           <Image
-            src="/images/version.svg"
+            src="/images/ebook-version.svg"
             alt="ebook cover"
             width={800}
             height={424}
