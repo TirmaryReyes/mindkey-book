@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
     if (onBuyNowClick) {
       onBuyNowClick();
     } else {
-      window.open('https://whop.com/hub/mindbody/', '_blank');
+      window.open('https://whop.com/mindkeybook/', '_blank');
     }
   };
 
@@ -25,9 +25,6 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
         id="contact-section"
         className="flex flex-col items-center justify-center min-h-[calc(100vh-96px)] px-6 lg:px-20 mt-0 pt-0"
       >
-        <h1 className="text-2xl text-offer font-bold text-center leading-snug sm:text-4xl md:text-4xl lg:text-3xl lg:leading-normal xl:leading-looser mt-4 sm:mt-8">
-          Don&apos;t wait any longer!
-        </h1>
         <div className="flex justify-center w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mt-4">
           <Image
             src="/images/ebook-version.svg"
@@ -40,11 +37,14 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
             }}
           />
         </div>
+        <h1 className="text-2xl text-offer font-bold text-center leading-snug sm:text-4xl md:text-4xl lg:text-3xl lg:leading-normal xl:leading-looser mt-4 sm:mt-8">
+          Don&apos;t wait any longer!
+        </h1>
         <button
           onClick={handleBuyNowClick}
-          className="bg-paragraph hover:bg-blue-400 mb-10 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-10 transition duration-300 ease-in-out text-xs sm:text-sm"
+          className="bg-paragraph hover:bg-blue-400 mb-10 text-white font-semibold py-1 px-4 rounded-md inline-flex items-center justify-center mt-10 transition duration-300 ease-in-out text-sm sm:text-lg"
         >
-          <ShoppingIcon className="hidden sm:inline mr-2 text-white h-6 w-6 sm:h-4 sm:w-4" />
+          <ShoppingIcon className="hidden sm:inline mr-4 text-white h-8 w-8 sm:h-6 sm:w-6" />
           <span>Buy Now</span>
         </button>
       </section>
@@ -75,7 +75,7 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
             <FaInstagram size={24} />
           </a>*/}
             <a
-              href="mindkeybook@gmail.com"
+              href="mailto:mindkeybook@gmail.com"
               className="hover:text-red-500"
               aria-label="email"
             >

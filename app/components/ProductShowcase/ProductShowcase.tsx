@@ -18,16 +18,19 @@ interface ProductShowcaseProps {
   onBuyNowClick?: () => void;
 }
 
-const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onBuyNowClick }) => {
+const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
   const targetDate = new Date();
   targetDate.setHours(targetDate.getHours() + 4);
 
   const handleBuyNowClick = () => {
-    if (onBuyNowClick) {
-      onBuyNowClick();
-    } else {
-      window.open('https://whop.com/hub/mindbody/', '_blank');
-    }
+    window.open('https://whop.com/mindkeybook/', '_blank');
+  };
+
+  const handleFreeDownloadClick = () => {
+    window.open(
+      'https://whop.com/checkout/4rcNfz4wL0edob2RX3-y81U-hNzV-rRnV-BpUv8WP2gel3/',
+      '_blank'
+    );
   };
 
   return (
@@ -35,31 +38,18 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onBuyNowClick }) => {
       id="product-section"
       className="bg-main-bg-color p-5 shadow-md rounded-lg text-center text-white pt-2"
     >
-      <h1 className="text-main-title text-3xl font-bold sm:text-4xl mt-2">
+      <h1 className="text-main-title text-2xl font-bold sm:text-3xl mt-2">
         Summer Weight Loss
       </h1>
-      <h2 className="text-xl font-semibold text-main-title mt-1 mb-2 sm:text-2xl">
+      <h2 className="text-lg font-semibold text-main-title mt-1 mb-2 sm:text-xl">
         A Guide for Women for Effective Weight Loss
       </h2>
-      <div className="flex justify-center mt-4">
-        <Image
-          src="/images/ebook.svg"
-          alt="ebook cover"
-          width={300}
-          height={100}
-          className="mt-4 lg:mt-0"
-          style={{
-            maxWidth: '100%',
-            height: 'auto',
-          }}
-        />
-      </div>
-      <p className="text-paragraph text-2xl font-semibold mt-5">
+      <p className="text-paragraph text-lg font-semibold mt-5">
         What&apos;s inside?
       </p>
       <span className="flex flex-col items-center justify-center mt-4">
         <BadgeIcon className="w-10 h-10 text-paragraph" />
-        <span className="text-main-title font-semibold text-2xl mt-2">
+        <span className="text-main-title font-light text-lg mt-2">
           Unlock Your Potential: Empower Your Mind with Knowledge!
         </span>
       </span>
@@ -73,12 +63,40 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onBuyNowClick }) => {
             'Empower yourself this summer with our weight loss plan designed for women, achieve your goals in a sustainable and healthy way!',
             'Immerse yourself in the pages of this book and awaken your hidden potential.',
           ].map((text, index) => (
-            <li key={index} className="flex items-center justify-start w-full">
+            <li
+              key={index}
+              className="flex items-center justify-start w-full text-sm"
+            >
               <CheckIcon className="w-5 h-5 mr-2 text-green-500 flex-shrink-0" />
               <span className="text-left">{text}</span>
             </li>
           ))}
         </ul>
+      </div>
+      <span className="text-paragraph text-sm leading-snug sm:text-base md:text-lg lg:text-md lg:leading-normal xl:leading-loose">
+        Download your free copy today and start your transformation!
+      </span>
+      <div className="mt-5 text-center">
+        <button
+          onClick={handleFreeDownloadClick}
+          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-xs sm:text-sm"
+        >
+          <span>Free Download</span>
+        </button>
+      </div>
+      <div className="mt-6 border-t-2 border-paragraph w-full max-w-3xl mx-auto"></div>
+      <div className="flex justify-center mt-8">
+        <Image
+          src="/images/ebook.svg"
+          alt="ebook cover"
+          width={300}
+          height={100}
+          className="mt-4 lg:mt-0"
+          style={{
+            maxWidth: '100%',
+            height: 'auto',
+          }}
+        />
       </div>
       <div className="mt-5 text-center">
         <span className="text-offer text-4xl font-semibold sm:text-lg uppercase">
@@ -107,7 +125,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onBuyNowClick }) => {
         </div>
         <button
           onClick={handleBuyNowClick}
-          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-xxs sm:text-xs"
+          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-xs sm:text-sm"
         >
           <ShoppingIcon className="hidden sm:inline mr-2 text-white h-6 w-6 sm:h-4 sm:w-4" />
           <span>Buy Now</span>
