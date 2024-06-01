@@ -79,7 +79,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
       <div className="mt-5 text-center">
         <button
           onClick={handleFreeDownloadClick}
-          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-xs sm:text-sm"
+          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-3 px-6 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-sm sm:text-base md:text-lg"
         >
           <span>Free Download</span>
         </button>
@@ -89,9 +89,9 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
         <Image
           src="/images/ebook.svg"
           alt="ebook cover"
-          width={150}
-          height={50}
-          className="mt-4 lg:mt-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-1/5"
+          width={200}
+          height={100}
+          className="mt-4 lg:mt-0 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4"
           style={{
             height: 'auto',
           }}
@@ -124,9 +124,9 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
         </div>
         <button
           onClick={handleBuyNowClick}
-          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-xs sm:text-sm"
+          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-3 px-6 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-sm sm:text-base md:text-lg"
         >
-          <ShoppingIcon className="hidden sm:inline mr-2 text-white h-4 w-4 sm:h-4 sm:w-4" />
+          <ShoppingIcon className="hidden sm:inline mr-2 text-white h-5 w-5 sm:h-6 sm:w-6" />
           <span>Buy Now</span>
         </button>
       </div>
