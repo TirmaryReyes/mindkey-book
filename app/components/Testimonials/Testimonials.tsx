@@ -35,11 +35,11 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-black text-white py-8 px-4">
-      <h2 className="text-center text-paragraph text-xl font-bold mb-4">
+    <div className="bg-black text-white py-4 px-4 md:py-8">
+      <h2 className="text-center text-paragraph text-lg font-bold mb-2">
         Join my community of readers
       </h2>
-      <h3 className="text-center text-xl font-bold text-main-title mb-8">
+      <h3 className="text-center text-lg font-bold text-main-title mb-4 md:text-xl md:mb-8">
         Transformative Testimonials
       </h3>
       <div className="hidden md:grid md:grid-cols-3 gap-4 mx-auto max-w-6xl px-4">
@@ -49,7 +49,9 @@ const Testimonials = () => {
             data-testid="testimonial"
             className="p-4 rounded-lg bg-gray-800 border border-gray-700 flex flex-col justify-between"
           >
-            <p className="text-base text-center">{testimonial.text}</p>
+            <p className="text-sm text-center md:text-base">
+              {testimonial.text}
+            </p>
             <div className="flex justify-center mt-4">
               {[1, 2, 3, 4, 5].map((value) => (
                 <FaStar
@@ -60,7 +62,7 @@ const Testimonials = () => {
               ))}
             </div>
             <div className="flex items-center justify-end mt-4">
-              <span className="text-white font-bold mr-4 text-base">
+              <span className="text-white font-bold mr-4 text-sm md:text-base">
                 {testimonial.name}
               </span>
               <Image
@@ -78,7 +80,7 @@ const Testimonials = () => {
           </div>
         ))}
       </div>
-      <div className="md:hidden px-4 py-4">
+      <div className="md:hidden px-4 py-2">
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
             <div
@@ -86,7 +88,9 @@ const Testimonials = () => {
               data-testid="testimonial"
               className="p-4 rounded-lg bg-gray-800 border border-gray-700 flex flex-col justify-between"
             >
-              <p className="text-base text-center">{testimonial.text}</p>
+              <p className="text-sm text-center md:text-base">
+                {testimonial.text}
+              </p>
               <div className="flex justify-center mt-4">
                 {[1, 2, 3, 4, 5].map((value) => (
                   <FaStar
@@ -97,7 +101,7 @@ const Testimonials = () => {
                 ))}
               </div>
               <div className="flex items-center justify-end mt-4">
-                <span className="text-white font-bold mr-4 text-base">
+                <span className="text-white font-bold mr-4 text-sm md:text-base">
                   {testimonial.name}
                 </span>
                 <Image

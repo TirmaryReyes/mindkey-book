@@ -1,13 +1,15 @@
-// app/pages/constants.ts
-import type { Metadata } from 'next';
+export interface Metadata {
+  title: string;
+  description: string;
+}
 
 export const metadata: Metadata = {
-  title: 'MindBook',
+  title: 'MindKeyBook',
   description: 'Ebook, A Guide for Women for Effective Weight Loss',
 };
 
 export const productDescription = {
-  title: 'MindBook: A Guide for Women',
-  imageUrl: 'path/to/image.jpg',
+  title: 'MindKeyBook: A Guide for Women',
+  imageUrl: '/images/ebook.jpg',
   description: 'An ebook for effective weight loss',
 };

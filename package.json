@@ -9,6 +9,7 @@
     "lint": "next lint",
     "prepare": "husky",
     "test": "vitest"
+    
   },
   "dependencies": {
     "lint-staged": "^15.2.2",
