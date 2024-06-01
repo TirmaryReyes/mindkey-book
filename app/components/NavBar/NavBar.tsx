@@ -78,7 +78,11 @@ function NavBar() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/" legacyBehavior>
-                <h2 className="text-lg text-paragraph font-bold">MINDBOOK</h2>
+                <h2 className="text-xl text-paragraph font-bold normal-case">
+                  <span className="capitalize">Mind</span>
+                  <span className="normal-case">Key</span>
+                  <span className="capitalize">Book</span>
+                </h2>
               </Link>
               <div className="md:hidden">
                 <button
@@ -101,7 +105,7 @@ function NavBar() {
               {navItems.map((item) => (
                 <li
                   key={item.path}
-                  className={`text-sm text-paragraph py-2 px-6 text-center hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-300 ${
+                  className={`text-lg text-paragraph py-2 px-6 text-center hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-300 ${
                     item.className || ''
                   } ${mounted && activeSection === item.path ? 'underline' : ''}`}
                 >

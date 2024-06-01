@@ -23,11 +23,11 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
     <>
       <section
         id="contact-section"
-        className="flex flex-col items-center justify-center min-h-[calc(100vh-96px)] px-6 lg:px-20 mt-0 pt-0"
+        className="flex flex-col items-center justify-center min-h-[50vh] px-6 lg:px-20"
       >
         <div className="flex justify-center w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mt-4">
           <Image
-            src="/images/ebook-version.svg"
+            src="/images/ebook-version.png"
             alt="ebook cover"
             width={800}
             height={424}
@@ -42,7 +42,7 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
         </h1>
         <button
           onClick={handleBuyNowClick}
-          className="bg-paragraph hover:bg-blue-400 mb-10 text-white font-semibold py-1 px-4 rounded-md inline-flex items-center justify-center mt-10 transition duration-300 ease-in-out text-sm sm:text-lg"
+          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center mt-2 mb-4 transition duration-300 ease-in-out text-xs sm:text-sm"
         >
           <ShoppingIcon className="hidden sm:inline mr-4 text-white h-8 w-8 sm:h-6 sm:w-6" />
           <span>Buy Now</span>
@@ -51,13 +51,6 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
       <div className="bg-black text-white py-4">
         <div className="container mx-auto text-center">
           <div className="flex justify-center space-x-6 mb-4">
-            {/*<a
-            href="https://facebook.com"
-            className="hover:text-blue-500"
-            aria-label="facebook"
-          >
-            <FaFacebook size={24} />
-          </a>*/}
             <a
               href="https://x.com/MindKeyBook"
               className="hover:text-blue-400"
@@ -67,13 +60,6 @@ const Footer: React.FC<FooterProps> = ({ onBuyNowClick }) => {
             >
               <FaXTwitter size={24} />
             </a>
-            {/*<a
-            href="https://instagram.com"
-            className="hover:text-pink-500"
-            aria-label="instagram"
-          >
-            <FaInstagram size={24} />
-          </a>*/}
             <a
               href="mailto:mindkeybook@gmail.com"
               className="hover:text-red-500"

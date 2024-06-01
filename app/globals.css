@@ -23,7 +23,6 @@
   --font-size-5xl: 48px;
 }
 
-/* Clases personalizadas para tamaños de fuente */
 .text-xxs {
   font-size: var(--font-size-xxs);
 }
