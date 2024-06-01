@@ -16,13 +16,11 @@ describe('Footer component', () => {
     const button = screen.getByText(/Buy Now/i);
     expect(button).toBeInTheDocument();
 
-    expect(screen.getByLabelText('facebook')).toBeInTheDocument();
-    expect(screen.getByLabelText('twitter')).toBeInTheDocument();
-    expect(screen.getByLabelText('instagram')).toBeInTheDocument();
+    expect(screen.getByLabelText('x')).toBeInTheDocument();
     expect(screen.getByLabelText('email')).toBeInTheDocument();
 
     expect(
-      screen.getByText(/© 2024 MindBook. All rights reserved./i),
+      screen.getByText(/© 2024 MindBook. All rights reserved./i)
     ).toBeInTheDocument();
   });
 

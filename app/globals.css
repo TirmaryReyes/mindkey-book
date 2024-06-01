@@ -2,16 +2,70 @@
 
 :root {
   --main-bg-color: #050411;
-  --main-title-color: #FF9FDD;
-  --paragraph-color: #17A8B4;
+  --main-title-color: #ff9fdd;
+  --paragraph-color: #17a8b4;
   --sale-price-color: red;
   --text-color: white;
-  --offer-color: #F1C374;
+  --offer-color: #f1c374;
   --gray-color: #828282;
+  --green-color: #22c55e;
+  --green-hover-color: #1e9e3a;
+
+  --font-size-xxs: 10px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+}
+
+/* Clases personalizadas para tamaños de fuente */
+.text-xxs {
+  font-size: var(--font-size-xxs);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-md {
+  font-size: var(--font-size-md);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl);
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl);
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl);
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl);
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl);
 }
 
 body {
-  font-family: "Roboto Flex", sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   background-color: var(--main-bg-color);
   scroll-padding-top: 100px;
 }
@@ -38,7 +92,7 @@ body {
   .md\:block {
     display: block !important;
   }
-  
+
   .md\:hidden {
     display: none !important;
   }
@@ -62,19 +116,26 @@ html {
 
 @media (max-width: 768px) {
   .text-description {
-    font-size: 14px; 
+    font-size: 14px;
   }
 
-  .mainTitles, .contentDisplay-subtitles, .hero-title, .content-block {
-    font-size: 20px; 
+  .mainTitles,
+  .contentDisplay-subtitles,
+  .hero-title,
+  .content-block {
+    font-size: 20px;
   }
 
-  .offerTitle, .offerSubTitle, .countdown, .originalPrice, .salePrice {
-    font-size: 16px; 
+  .offerTitle,
+  .offerSubTitle,
+  .countdown,
+  .originalPrice,
+  .salePrice {
+    font-size: 16px;
   }
 }
 
-@layer utilities { 
+@layer utilities {
   .cursor-pointer {
     cursor: pointer;
   }
@@ -86,25 +147,25 @@ html {
   .list-item {
     @apply flex items-center justify-center;
   }
-  
+
   .list-item-icon {
     @apply w-5 h-5 mr-2 text-green-500;
   }
-  
+
   .list-item-text {
     @apply text-left;
   }
 
   .w-full {
-    width: 100%; 
+    width: 100%;
   }
 
   .h-full {
-    height: auto; 
+    height: auto;
   }
 
   .object-cover {
-    object-fit: cover; 
+    object-fit: cover;
   }
 
   .text-description {
@@ -126,8 +187,13 @@ html {
   .offerTitle {
     @apply text-offer-color text-5xl font-bold;
   }
-
-  .offerSubTitle, .countdown, .originalPrice, .salePrice {
+  .small-font-size {
+    font-size: 12px;
+  }
+  .offerSubTitle,
+  .countdown,
+  .originalPrice,
+  .salePrice {
     @apply text-3xl font-bold;
   }
 
@@ -139,7 +205,10 @@ html {
     color: var(--sale-price-color);
   }
 
-  .camp-quote, .feature-phone, .get-app, .hide-scrollbar {
-    @apply hidden; 
+  .camp-quote,
+  .feature-phone,
+  .get-app,
+  .hide-scrollbar {
+    @apply hidden;
   }
 }

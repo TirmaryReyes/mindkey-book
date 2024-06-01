@@ -12,6 +12,8 @@ export default function RootLayout({
       <head>
         <title>{String(metadata.title)}</title>
         <meta name="description" content={String(metadata.description)} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <NavBar />

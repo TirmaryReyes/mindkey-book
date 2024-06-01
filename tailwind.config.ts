@@ -10,11 +10,13 @@ module.exports = {
       colors: {
         'main-bg': 'var(--main-bg-color)',
         'main-title': 'var(--main-title-color)',
-        'paragraph': 'var(--paragraph-color)',
+        paragraph: 'var(--paragraph-color)',
         'sale-price': 'var(--sale-price-color)',
-        'text': 'var(--text-color)',
-        'offer': 'var(--offer-color)',
-        'gray': 'var(--gray-color)',
+        text: 'var(--text-color)',
+        offer: 'var(--offer-color)',
+        gray: 'var(--gray-color)',
+        green: 'var(--green-color)',
+        'green-hover': 'var(--green-hover-color)',
       },
       backgroundImage: {
         'bg-model': "url('/public/model.svg')",

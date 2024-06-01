@@ -15,22 +15,22 @@ function NavBar() {
   const navItems = useMemo(
     () => [
       { path: '#home-section', label: 'Home' },
-      { path: '#about-section', label: 'About' },
       { path: '#product-section', label: 'Product' },
-      { path: '#testimony-section', label: 'Testimony' },
+      { path: '#about-section', label: 'About' },
+      { path: '#testimony-section', label: 'Testimonials' },
       {
         path: '#contact-section',
         label: 'Contact',
         className: 'hidden lg:block',
       },
     ],
-    [],
+    []
   );
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) =>
-        document.querySelector(item.path),
+        document.querySelector(item.path)
       );
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -61,7 +61,7 @@ function NavBar() {
 
   const handleLinkClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
-    path: string,
+    path: string
   ) => {
     event.preventDefault();
     const section = document.querySelector(path);
@@ -78,14 +78,14 @@ function NavBar() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/" legacyBehavior>
-                <h2 className="text-2xl text-paragraph font-bold">MINDBOOK</h2>
+                <h2 className="text-lg text-paragraph font-bold">MINDBOOK</h2>
               </Link>
               <div className="md:hidden">
                 <button
                   className="p-2 text-paragraph rounded-md outline-none focus:border-gray-400 focus:border"
                   onClick={() => setNavbar(!navbar)}
                 >
-                  <span className="block w-12 h-12 text-4xl">
+                  <span className="block w-8 h-8 text-2xl">
                     {navbar ? '✖' : '☰'}
                   </span>
                 </button>
@@ -97,11 +97,11 @@ function NavBar() {
               navbar ? 'block' : 'hidden'
             } md:block`}
           >
-            <ul className="items-center justify-center space-y-4 md:space-y-0 md:space-x-10 md:flex lg:space-x-14">
+            <ul className="items-center justify-center space-y-4 md:space-y-0 md:space-x-6 md:flex lg:space-x-8">
               {navItems.map((item) => (
                 <li
                   key={item.path}
-                  className={`text-xl text-paragraph py-2 px-6 text-center hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-300 ${
+                  className={`text-sm text-paragraph py-2 px-6 text-center hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-300 ${
                     item.className || ''
                   } ${mounted && activeSection === item.path ? 'underline' : ''}`}
                 >

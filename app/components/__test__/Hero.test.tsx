@@ -8,11 +8,11 @@ describe('Given a Hero component', () => {
       render(<Hero />);
 
       const mainHeading = screen.getByText(
-        /Imagine enjoying this paradise without/,
+        /Imagine enjoying this paradise without/
       );
       const subHeading = screen.getByText(/worrying about those extra pounds?/);
       const descriptionText = screen.getByText(
-        /My eBook can help you achieve just that effortlessly/,
+        /My eBook can help you achieve just that effortlessly/
       );
 
       expect(mainHeading).toBeTruthy();

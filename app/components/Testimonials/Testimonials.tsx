@@ -35,21 +35,21 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-black text-white py-8">
-      <h2 className="text-center text-paragraph text-2xl font-bold mb-4 px-4">
+    <div className="bg-black text-white py-8 px-4">
+      <h2 className="text-center text-paragraph text-xl font-bold mb-4">
         Join my community of readers
       </h2>
-      <h3 className="text-center text-2xl font-bold text-main-title mb-8 px-4">
+      <h3 className="text-center text-xl font-bold text-main-title mb-8">
         Transformative Testimonials
       </h3>
-      <div className="hidden md:grid md:grid-cols-3 gap-4 mx-auto max-w-6xl">
+      <div className="hidden md:grid md:grid-cols-3 gap-4 mx-auto max-w-6xl px-4">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
             data-testid="testimonial"
             className="p-4 rounded-lg bg-gray-800 border border-gray-700 flex flex-col justify-between"
           >
-            <p className="text-lg text-center">{testimonial.text}</p>
+            <p className="text-base text-center">{testimonial.text}</p>
             <div className="flex justify-center mt-4">
               {[1, 2, 3, 4, 5].map((value) => (
                 <FaStar
@@ -60,7 +60,7 @@ const Testimonials = () => {
               ))}
             </div>
             <div className="flex items-center justify-end mt-4">
-              <span className="text-white font-bold mr-4">
+              <span className="text-white font-bold mr-4 text-base">
                 {testimonial.name}
               </span>
               <Image
@@ -86,7 +86,7 @@ const Testimonials = () => {
               data-testid="testimonial"
               className="p-4 rounded-lg bg-gray-800 border border-gray-700 flex flex-col justify-between"
             >
-              <p className="text-lg text-center">{testimonial.text}</p>
+              <p className="text-base text-center">{testimonial.text}</p>
               <div className="flex justify-center mt-4">
                 {[1, 2, 3, 4, 5].map((value) => (
                   <FaStar
@@ -97,7 +97,7 @@ const Testimonials = () => {
                 ))}
               </div>
               <div className="flex items-center justify-end mt-4">
-                <span className="text-yellow-400 font-bold mr-4">
+                <span className="text-white font-bold mr-4 text-base">
                   {testimonial.name}
                 </span>
                 <Image
