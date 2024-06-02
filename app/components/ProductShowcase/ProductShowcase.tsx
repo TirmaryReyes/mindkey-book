@@ -27,10 +27,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
   };
 
   const handleFreeDownloadClick = () => {
-    window.open(
-      'https://whop.com/hub/mindkeybook/summer-slimdown-freebook-JoSbBVl6PHhF9c/app/',
-      '_blank'
-    );
+    window.open('https://rb.gy/bg5jer', '_blank');
   };
 
   return (
