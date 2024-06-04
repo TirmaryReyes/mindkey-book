@@ -10,17 +10,17 @@ const testimonials = [
   {
     name: 'Vanessa',
     text: 'I shared this eBook with my mom, and after reviewing it together, we have so much fun at our Zumba sessions.',
-    image: '/images/testimony-vanessa.svg',
+    image: '/images/testimony-vanessa.webp',
   },
   {
     name: 'Emily',
     text: 'My husband and I are committed to never repeating the same mistakes again. We have crafted our diet plan using the book and continuously refer back to it for guidance.',
-    image: '/images/testimony-emily.svg',
+    image: '/images/testimony-emily.webp',
   },
   {
     name: 'Rachel',
     text: "I was lost and didn't know what to do, but Jean-Baptiste and his book opened my eyes. I finally figured out how to lose weight for good.",
-    image: '/images/testimony-rachel.svg',
+    image: '/images/testimony-rachel.webp',
   },
 ];
 
@@ -67,14 +67,15 @@ const Testimonials = () => {
               </span>
               <Image
                 className="w-12 h-12 rounded-full"
-                width={48}
-                height={48}
+                width={50}
+                height={50}
                 src={testimonial.image}
                 alt={testimonial.name}
                 style={{
                   maxWidth: '100%',
                   height: 'auto',
                 }}
+                quality={100}
               />
             </div>
           </div>
