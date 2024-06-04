@@ -5,8 +5,7 @@ interface BadgeIconProps {
   size?: number;
 }
 
-const BadgeIcon: FC<BadgeIconProps> = ({ className, size = 20 }) => {
-  const svgSize = `${size}px`;
+const BadgeIcon: FC<BadgeIconProps> = ({ className }) => {
   return (
     <svg
       className={className}
