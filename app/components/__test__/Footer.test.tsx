@@ -11,10 +11,10 @@ describe('Footer component', () => {
 
     const image = screen.getByAltText('ebook cover');
     expect(image).toBeInTheDocument();
-    // Verificar que la URL de la imagen contiene la parte relevante de la ruta optimizada
+
     expect(image).toHaveAttribute(
       'src',
-      expect.stringContaining('/_next/image?url=%2Fimages%2Febook-version.png')
+      expect.stringContaining('/_next/image?url=%2Fimages%2Febook-version.webp')
     );
 
     const button = screen.getByText(/Buy Now/i);

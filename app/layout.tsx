@@ -1,12 +1,14 @@
 import './globals.css';
 import NavBar from './components/NavBar/NavBar';
 import { metadata } from './constants';
+import PinterestTag from './components/PinterestTag';
+import { ReactNode } from 'react';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   const title = metadata.title || 'Default Title';
   const description = metadata.description || 'Default Description';
 
@@ -23,6 +25,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
+        <PinterestTag />
         {children}
         <NavBar />
       </body>

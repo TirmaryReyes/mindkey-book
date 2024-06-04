@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <section
-      className="relative pt-24 bg-cover bg-center bg-[url('/images/model.svg')]"
+      className="relative pt-24 bg-cover bg-center bg-[url('/images/model.webp')]"
       id="home-section"
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
