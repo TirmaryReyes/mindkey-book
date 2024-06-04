@@ -118,6 +118,10 @@ html {
     font-size: 14px;
   }
 
+.text-justify {
+  text-align: justify;
+}
+
   .mainTitles,
   .contentDisplay-subtitles,
   .hero-title,

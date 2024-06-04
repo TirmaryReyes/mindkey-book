@@ -2,6 +2,14 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
+import { MenuIcon } from '@/public/icons/Menu-Icon';
+import { MenuBurgerClosed } from '@/public/icons/Menu-Burger-Closed';
+
+type NavItem = {
+  path: string;
+  label: string;
+  className?: string;
+};
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -12,17 +20,14 @@ function NavBar() {
     setMounted(true);
   }, []);
 
-  const navItems = useMemo(
+  const navItems: NavItem[] = useMemo(
     () => [
       { path: '#home-section', label: 'Home' },
       { path: '#product-section', label: 'Product' },
       { path: '#about-section', label: 'About' },
       { path: '#testimony-section', label: 'Testimonials' },
-      {
-        path: '#contact-section',
-        label: 'Contact',
-        className: 'hidden lg:block',
-      },
+      { path: '#contact-section', label: 'Contact' },
+      { path: '#FAQ-section', label: 'FAQ' },
     ],
     []
   );
@@ -90,7 +95,11 @@ function NavBar() {
                   onClick={() => setNavbar(!navbar)}
                 >
                   <span className="block w-8 h-8 text-2xl">
-                    {navbar ? '✖' : '☰'}
+                    {navbar ? (
+                      <MenuBurgerClosed size={30} />
+                    ) : (
+                      <MenuIcon size={30} />
+                    )}
                   </span>
                 </button>
               </div>
@@ -112,6 +121,7 @@ function NavBar() {
                   <a
                     href={item.path}
                     onClick={(event) => handleLinkClick(event, item.path)}
+                    style={{ display: 'block' }}
                   >
                     {item.label}
                   </a>

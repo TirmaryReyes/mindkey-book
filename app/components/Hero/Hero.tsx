@@ -1,8 +1,31 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+
 const Hero = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      const image = new Image();
+      image.src = '/images/model.webp';
+      image.onload = () => {
+        if (sectionRef.current) {
+          sectionRef.current.style.backgroundImage = `url('${image.src}')`;
+        }
+      };
+    }
+  }, []);
+
   return (
     <section
-      className="relative pt-24 bg-cover bg-center bg-[url('/images/model.webp')]"
+      ref={sectionRef}
+      className="relative pt-24 bg-cover bg-center"
       id="home-section"
+      style={{
+        backgroundImage:
+          "url('data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=')",
+      }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative flex flex-col items-center justify-center min-h-[calc(100vh-96px)] px-6 lg:px-20">

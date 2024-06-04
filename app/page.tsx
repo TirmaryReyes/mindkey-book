@@ -8,6 +8,7 @@ import ProductShowcase from './components/ProductShowcase/ProductShowcase';
 import About from './components/About/About';
 import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
+import FAQSection from './components/FAQSection/FAQSection';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -75,6 +76,9 @@ export default function Home() {
       </section>
       <section id="testimony-section">
         <Testimonials />
+      </section>
+      <section id="FAQ-section">
+        <FAQSection />
       </section>
       <section id="footer-section">
         <Footer />

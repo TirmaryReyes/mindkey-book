@@ -5,8 +5,7 @@ interface ShoppingIconProps {
   size?: number;
 }
 
-const ShoppingIcon: FC<ShoppingIconProps> = ({ className, size = 20 }) => {
-  const svgSize = `${size}px`;
+const ShoppingIcon: FC<ShoppingIconProps> = ({ className }) => {
   return (
     <svg
       className={className}
