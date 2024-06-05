@@ -30,7 +30,7 @@ describe('Given a NavBar component', () => {
       const sections = ['Home', 'Product', 'About', 'Testimonials', 'FAQ'];
 
       for (const section of sections) {
-        const link = screen.getByText(new RegExp(section, 'i'));
+        const link = screen.getByText(new RegExp(`^${section}$`, 'i'));
         fireEvent.click(link);
 
         // Check if scrollIntoView was called for each section
@@ -49,7 +49,9 @@ describe('Given a NavBar component', () => {
       render(<NavBar />);
       const links = ['Home', 'Product', 'About', 'Testimonials', 'FAQ'];
       links.forEach((link) => {
-        expect(screen.getByText(new RegExp(link, 'i'))).toBeInTheDocument();
+        expect(
+          screen.getByText(new RegExp(`^${link}$`, 'i'))
+        ).toBeInTheDocument();
       });
     });
   });

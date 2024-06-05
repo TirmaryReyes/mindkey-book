@@ -1,16 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import { describe, test, expect } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, test, expect, vi } from 'vitest';
 import ProductShowcase from '../ProductShowcase/ProductShowcase';
 
 describe('Given a ProductShowcase component', () => {
+  const product = {
+    title: 'Summer Weight Loss',
+    imageUrl: '/images/ebook.svg',
+    description: 'A Guide for Women for Effective Weight Loss',
+  };
+
   describe('When it is rendered', () => {
     test('Then it should show product information and special price details', () => {
-      const product = {
-        title: 'Product Title',
-        imageUrl: '/path/to/image.jpg',
-        description: 'Product Description',
-      };
-
       render(<ProductShowcase product={product} />);
 
       const productTitle = screen.getByText('Summer Weight Loss');
@@ -49,6 +49,41 @@ describe('Given a ProductShowcase component', () => {
 
       const buyNowButton = screen.getByRole('button', { name: /buy now/i });
       expect(buyNowButton).toBeTruthy();
+
+      const freeDownloadButton = screen.getByRole('button', {
+        name: /free download/i,
+      });
+      expect(freeDownloadButton).toBeTruthy();
+    });
+
+    test('Then the Buy Now button should open the correct URL in a new tab', () => {
+      window.open = vi.fn();
+
+      render(<ProductShowcase product={product} />);
+
+      const buyNowButton = screen.getByRole('button', { name: /buy now/i });
+      fireEvent.click(buyNowButton);
+
+      expect(window.open).toHaveBeenCalledWith(
+        'https://whop.com/checkout/4JuynWz2Y1T772UQed-SG79-35MO-O9wh-1m6cD0wispgn/',
+        '_blank'
+      );
+    });
+
+    test('Then the Free Download button should open the correct URL in a new tab', () => {
+      window.open = vi.fn();
+
+      render(<ProductShowcase product={product} />);
+
+      const freeDownloadButton = screen.getByRole('button', {
+        name: /free download/i,
+      });
+      fireEvent.click(freeDownloadButton);
+
+      expect(window.open).toHaveBeenCalledWith(
+        'https://rb.gy/bg5jer',
+        '_blank'
+      );
     });
   });
 });
