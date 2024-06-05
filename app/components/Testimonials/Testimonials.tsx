@@ -3,7 +3,6 @@
 import Slider from 'react-slick';
 import { FaStar } from 'react-icons/fa';
 import Image from 'next/image';
-import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const testimonials = [

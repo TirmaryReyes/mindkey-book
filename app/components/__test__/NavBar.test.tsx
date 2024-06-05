@@ -3,7 +3,6 @@ import { describe, test, expect, beforeAll, vi } from 'vitest';
 import NavBar from '../NavBar/NavBar';
 
 beforeAll(() => {
-  // Mock scrollIntoView
   HTMLElement.prototype.scrollIntoView = vi.fn();
 });
 
@@ -22,7 +21,6 @@ describe('Given a NavBar component', () => {
         </>
       );
 
-      // Wait for the links to be rendered
       await waitFor(() => {
         expect(screen.getByText(/Home/i)).toBeInTheDocument();
       });
@@ -30,15 +28,13 @@ describe('Given a NavBar component', () => {
       const sections = ['Home', 'Product', 'About', 'Testimonials', 'FAQ'];
 
       for (const section of sections) {
-        const link = screen.getByText(new RegExp(section, 'i'));
+        const link = screen.getByText(section, { exact: false });
         fireEvent.click(link);
 
-        // Check if scrollIntoView was called for each section
         await waitFor(() => {
           expect(HTMLElement.prototype.scrollIntoView).toHaveBeenCalled();
         });
 
-        // Check if the active section is updated
         expect(link.closest('li')).toHaveClass('underline');
       }
     });
@@ -49,7 +45,7 @@ describe('Given a NavBar component', () => {
       render(<NavBar />);
       const links = ['Home', 'Product', 'About', 'Testimonials', 'FAQ'];
       links.forEach((link) => {
-        expect(screen.getByText(new RegExp(link, 'i'))).toBeInTheDocument();
+        expect(screen.getByText(link, { exact: false })).toBeInTheDocument();
       });
     });
   });
@@ -58,7 +54,6 @@ describe('Given a NavBar component', () => {
     test('Then it should toggle the mobile menu visibility', async () => {
       render(<NavBar />);
 
-      // Simulate window resize
       global.innerWidth = 500;
       global.dispatchEvent(new Event('resize'));
 
