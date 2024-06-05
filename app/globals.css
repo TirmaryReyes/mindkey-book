@@ -118,9 +118,9 @@ html {
     font-size: 14px;
   }
 
-.text-justify {
-  text-align: justify;
-}
+  .text-justify {
+    text-align: justify;
+  }
 
   .mainTitles,
   .contentDisplay-subtitles,
@@ -190,9 +190,11 @@ html {
   .offerTitle {
     @apply text-offer-color text-5xl font-bold;
   }
+
   .small-font-size {
     font-size: 12px;
   }
+
   .offerSubTitle,
   .countdown,
   .originalPrice,

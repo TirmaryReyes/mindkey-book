@@ -115,7 +115,7 @@ function NavBar() {
               navbar ? 'block' : 'hidden'
             } md:block`}
           >
-            <ul className="items-center justify-center space-y-4 md:space-y-0 md:space-x-6 md:flex lg:space-x-8">
+            <ul className="flex flex-col items-center justify-center space-y-4 md:space-y-0 md:space-x-6 md:flex-row lg:space-x-8">
               {navItems.map((item) => (
                 <li
                   key={item.path}
