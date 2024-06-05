@@ -8,14 +8,27 @@ const FAQSection: React.FC = () => {
   const [visibleIndexes, setVisibleIndexes] = useState<number[]>([]);
   const faqs = [
     {
-      question: 'Why buy this eBook?',
+      question: 'What topics does the nutrition ebook cover?',
       answer:
-        "Achieving and maintaining a healthy weight is key to overall well-being. This book addresses the importance of a healthy approach to weight loss and setting realistic goals. It's not just about numbers on the scale but about sustainable lifestyle changes that promote physical and mental health.",
+        'Balanced diets, essential nutrients, meal prep tips, healthy recipes, and weight management.',
     },
     {
-      question: "What do I do if I don't like the book?",
+      question: 'Is the ebook suitable for beginners?',
       answer:
-        'We are committed to your satisfaction. If for any reason you are not satisfied with your purchase, we offer a money-back guarantee. Simply contact us within 30 days from the purchase date and we will refund the full amount of your purchase, no questions asked. We want you to feel confident when purchasing our product, and we are here to ensure you have a positive experience with us.',
+        "Yes, it's designed for all levels with easy-to-understand tips and explanations.",
+    },
+    {
+      question: 'Can I access the ebook on multiple devices?',
+      answer: "It's compatible with smartphones, tablets, and computers.",
+    },
+    {
+      question: 'What if I have questions or need support after purchasing?',
+      answer: 'Contact our support via email for any assistance or questions.',
+    },
+    {
+      question: 'Is there a money-back guarantee?',
+      answer:
+        'Yes, we offer a 30-day money-back guarantee for your satisfaction.',
     },
   ];
 
@@ -37,7 +50,10 @@ const FAQSection: React.FC = () => {
   };
 
   const handleBuyNowClick = () => {
-    window.open('https://whop.com/mindkeybook/', '_blank');
+    window.open(
+      'https://whop.com/checkout/4JuynWz2Y1T772UQed-SG79-35MO-O9wh-1m6cD0wispgn/',
+      '_blank'
+    );
   };
 
   return (
@@ -70,31 +86,36 @@ const FAQSection: React.FC = () => {
         </button>
       </div>
 
-      <h2 className="text-3xl text-paragraph font-bold text-center mb-8 mt-20">
+      <h2 className="text-3xl text-paragraph font-bold text-center mb-8 mt-20 lg:hidden">
+        FAQ
+      </h2>
+      <h2 className="text-3xl text-paragraph font-bold text-center mb-8 mt-20 hidden lg:block">
         Frequently Asked Questions
       </h2>
-      <div className="space-y-6 bg-main-bg-color text-color p-5 shadow-md rounded-lg mt-5 max-w-4xl mx-auto">
+      <div className="space-y-4 max-w-4xl mx-auto">
         {faqs.map((faq, index) => (
-          <div key={index} className="p-4 border-b border-gray-300 text-left">
+          <div key={index} className="border border-paragraph rounded-lg">
             <div
-              className="flex justify-between items-center cursor-pointer"
+              className="flex justify-between items-center cursor-pointer p-4"
               onClick={() => toggleVisibility(index)}
               onKeyDown={(event) => handleKeyDown(event, index)}
               role="button"
               tabIndex={0}
               aria-expanded={visibleIndexes.includes(index)}
             >
-              <h3 className="text-xl font-semibold text-paragraph ">
+              <h3 className="text-lg font-semibold text-paragraph">
                 {faq.question}
               </h3>
-              <span className="text-white text-xl">
+              <span className="text-lg text-paragraph">
                 {visibleIndexes.includes(index) ? '−' : '+'}
               </span>
             </div>
             {visibleIndexes.includes(index) && (
-              <p className="mt-2 text-lg text-white text-justify">
-                {faq.answer}
-              </p>
+              <div className="px-4 pb-4 text-white">
+                <p className="mt-2 text-base text-justify text-white">
+                  {faq.answer}
+                </p>
+              </div>
             )}
           </div>
         ))}

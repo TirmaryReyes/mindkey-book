@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import { MenuIcon } from '@/public/icons/Menu-Icon';
-import { MenuBurgerClosed } from '@/public/icons/Menu-Burger-Closed';
+import IconClosed from '../../../public/icons/IconClosed';
+import MenuIcon from '../../../public/icons/MenuIcon';
 
 type NavItem = {
   path: string;
@@ -26,7 +26,6 @@ function NavBar() {
       { path: '#product-section', label: 'Product' },
       { path: '#about-section', label: 'About' },
       { path: '#testimony-section', label: 'Testimonials' },
-      { path: '#contact-section', label: 'Contact' },
       { path: '#FAQ-section', label: 'FAQ' },
     ],
     []
@@ -65,7 +64,7 @@ function NavBar() {
   }, [navItems]);
 
   const handleLinkClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
+    event: React.MouseEvent<HTMLButtonElement>,
     path: string
   ) => {
     event.preventDefault();
@@ -74,38 +73,44 @@ function NavBar() {
       section.scrollIntoView({ behavior: 'smooth' });
     }
     setNavbar(false);
+    setActiveSection(path);
   };
 
   return (
     <div className="bg-main-bg-color">
-      <nav className="w-full bg-main-bg-color fixed top-0 left-0 right-0 z-10">
+      <nav
+        className="w-full bg-main-bg-color fixed top-0 left-0 right-0 z-10"
+        role="navigation"
+      >
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/" legacyBehavior>
-                <h2 className="text-xl text-paragraph font-bold normal-case">
+                <a
+                  href="/"
+                  className="text-xl text-paragraph font-bold normal-case"
+                >
                   <span className="capitalize">Mind</span>
                   <span className="normal-case">Key</span>
                   <span className="capitalize">Book</span>
-                </h2>
+                </a>
               </Link>
               <div className="md:hidden">
                 <button
                   className="p-2 text-paragraph rounded-md outline-none focus:border-gray-400 focus:border"
                   onClick={() => setNavbar(!navbar)}
+                  data-testid="menu-button"
+                  aria-label="Toggle navigation menu"
                 >
                   <span className="block w-8 h-8 text-2xl">
-                    {navbar ? (
-                      <MenuBurgerClosed size={30} />
-                    ) : (
-                      <MenuIcon size={30} />
-                    )}
+                    {navbar ? <IconClosed size={30} /> : <MenuIcon size={30} />}
                   </span>
                 </button>
               </div>
             </div>
           </div>
           <div
+            data-testid="mobile-menu"
             className={`flex-1 justify-self-center pb-3 mt-8 md:flex md:justify-end md:pb-0 md:mt-0 ${
               navbar ? 'block' : 'hidden'
             } md:block`}
@@ -118,13 +123,22 @@ function NavBar() {
                     item.className || ''
                   } ${mounted && activeSection === item.path ? 'underline' : ''}`}
                 >
-                  <a
-                    href={item.path}
+                  <button
                     onClick={(event) => handleLinkClick(event, item.path)}
-                    style={{ display: 'block' }}
+                    style={{
+                      display: 'block',
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      margin: 0,
+                      color: 'inherit',
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                    }}
+                    aria-label={`Navigate to ${item.label}`}
                   >
                     {item.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
