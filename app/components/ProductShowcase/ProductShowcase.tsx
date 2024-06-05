@@ -23,7 +23,10 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
   targetDate.setHours(targetDate.getHours() + 4);
 
   const handleBuyNowClick = () => {
-    window.open('https://whop.com/mindkeybook/', '_blank');
+    window.open(
+      'https://whop.com/checkout/4JuynWz2Y1T772UQed-SG79-35MO-O9wh-1m6cD0wispgn/',
+      '_blank'
+    );
   };
 
   const handleFreeDownloadClick = () => {

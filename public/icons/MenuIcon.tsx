@@ -1,18 +1,13 @@
-import { FC } from 'react';
+import React from 'react';
 
-interface MenuBurgerClosedProps {
-  className?: string;
+interface MenuIconProps {
   size?: number;
 }
 
-const MenuBurgerClosed: FC<MenuBurgerClosedProps> = ({
-  className,
-  size = 44,
-}) => {
+const MenuIcon: React.FC<MenuIconProps> = ({ size = 44 }) => {
   const svgSize = `${size}px`;
   return (
     <svg
-      className={className}
       width={svgSize}
       height={svgSize}
       viewBox="0 0 44 51"
@@ -27,4 +22,4 @@ const MenuBurgerClosed: FC<MenuBurgerClosedProps> = ({
   );
 };
 
-export { MenuBurgerClosed };
+export default MenuIcon;

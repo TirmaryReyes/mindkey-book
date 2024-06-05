@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import { MenuIcon } from '@/public/icons/Menu-Icon';
-import { MenuBurgerClosed } from '@/public/icons/Menu-Burger-Closed';
+import MenuBurgerClosed from '../../../public/icons/MenuBurgerClosed';
+import MenuIcon from '../../../public/icons/MenuIcon';
 
 type NavItem = {
   path: string;
@@ -26,7 +26,6 @@ function NavBar() {
       { path: '#product-section', label: 'Product' },
       { path: '#about-section', label: 'About' },
       { path: '#testimony-section', label: 'Testimonials' },
-      { path: '#contact-section', label: 'Contact' },
       { path: '#FAQ-section', label: 'FAQ' },
     ],
     []

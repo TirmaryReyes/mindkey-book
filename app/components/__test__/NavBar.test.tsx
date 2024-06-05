@@ -11,13 +11,13 @@ describe('Given a NavBar component', () => {
       const aboutLink = screen.getByRole('link', { name: 'About' });
       const productLink = screen.getByRole('link', { name: 'Product' });
       const testimonyLink = screen.getByRole('link', { name: 'Testimonials' });
-      const contactLink = screen.getByRole('link', { name: 'Contact' });
+      const FAQLink = screen.getByRole('link', { name: 'FAQ' });
 
-      expect(homeLink).toBeTruthy();
-      expect(productLink).toBeTruthy();
-      expect(aboutLink).toBeTruthy();
-      expect(testimonyLink).toBeTruthy();
-      expect(contactLink).toBeTruthy();
+      expect(homeLink).toBeInTheDocument();
+      expect(productLink).toBeInTheDocument();
+      expect(aboutLink).toBeInTheDocument();
+      expect(testimonyLink).toBeInTheDocument();
+      expect(FAQLink).toBeInTheDocument();
     });
   });
 });
