@@ -15,6 +15,15 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true);
+    const link = document.createElement('link');
+    link.href =
+      'https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap';
+    link.rel = 'stylesheet';
+    link.media = 'print';
+    link.onload = () => {
+      link.media = 'all';
+    };
+    document.head.appendChild(link);
   }, []);
 
   if (!mounted) {
@@ -64,6 +73,12 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </Head>
       <section id="home-section">
         <Hero />
