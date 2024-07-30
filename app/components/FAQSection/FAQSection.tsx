@@ -79,7 +79,7 @@ const FAQSection: React.FC = () => {
         </h1>
         <button
           onClick={handleBuyNowClick}
-          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-3 px-6 rounded-md inline-flex items-center justify-center mt-8 mb-4 transition duration-300 ease-in-out text-sm sm:text-base md:text-lg"
+          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-3 px-8 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-sm sm:text-base md:text-lg"
         >
           <ShoppingIcon className="hidden sm:inline mr-2 text-white h-5 w-5 sm:h-6 sm:w-6" />
           <span>Buy Now</span>
