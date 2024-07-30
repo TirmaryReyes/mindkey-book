@@ -91,7 +91,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
           alt="ebook cover"
           width={200}
           height={100}
-          className="mt-4 lg:mt-0 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4"
+          className="mt-4 lg:mt-0 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
           style={{
             height: 'auto',
           }}
