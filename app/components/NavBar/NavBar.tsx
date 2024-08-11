@@ -97,12 +97,13 @@ function NavBar() {
               </Link>
               <div className="md:hidden">
                 <button
-                  className="p-2 text-paragraph rounded-md outline-none focus:border-gray-400 focus:border"
+                  className="p-2 text-paragraph rounded-md outline-none focus:border-gray-400 focus:border flex items-center justify-center"
                   onClick={() => setNavbar(!navbar)}
                   data-testid="menu-button"
                   aria-label="Toggle navigation menu"
+                  style={{ width: '40px', height: '40px' }}
                 >
-                  <span className="block w-8 h-8 text-2xl">
+                  <span className="block">
                     {navbar ? <IconClosed size={30} /> : <MenuIcon size={30} />}
                   </span>
                 </button>
