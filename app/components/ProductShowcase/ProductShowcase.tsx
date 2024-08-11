@@ -118,13 +118,13 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = () => {
           <div className="text-main-title text-2xl font-semibold sm:text-2xl md:text-xl mt-0">
             <CountdownTimer targetDate={targetDate} />
           </div>
-          <span className="text-5xl text-red-500 font-semibold sm:text-3xl mt-8">
+          <span className="text-3xl text-red-500 font-semibold sm:text-2xl mt-8">
             $14.99
           </span>
         </div>
         <button
           onClick={handleBuyNowClick}
-          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-3 px-6 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-sm sm:text-base md:text-lg"
+          className="bg-paragraph hover:bg-blue-400 text-white font-semibold py-3 px-8 rounded-md inline-flex items-center justify-center mt-2 transition duration-300 ease-in-out text-sm sm:text-base md:text-lg"
         >
           <ShoppingIcon className="hidden sm:inline mr-2 text-white h-5 w-5 sm:h-6 sm:w-6" />
           <span>Buy Now</span>
